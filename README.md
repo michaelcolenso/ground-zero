@@ -65,9 +65,19 @@ curl -s "https://archive.org/metadata/<identifier>" | jq '.metadata'
 
 ## Deploy
 
+Live at **https://ground-zero-bjc.pages.dev** (Cloudflare Pages project `ground-zero`).
+
 ```bash
 npm run deploy     # build + wrangler pages deploy public
 ```
+
+Pushes to `master` deploy automatically via [`.github/workflows/deploy.yml`].
+That workflow needs two repository secrets:
+
+| Secret | Value |
+|--------|-------|
+| `CLOUDFLARE_API_TOKEN` | A token with **Pages: Edit** (and **D1: Edit** if you use the manual seed workflow) |
+| `CLOUDFLARE_ACCOUNT_ID` | Your account id (no surrounding whitespace) |
 
 ### Optional: back the API with D1
 
