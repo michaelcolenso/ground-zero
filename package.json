@@ -1,0 +1,19 @@
+{
+  "name": "ground-zero",
+  "version": "1.0.0",
+  "description": "Ground Zero — an explorer for declassified U.S. atmospheric nuclear test films from the Internet Archive.",
+  "type": "module",
+  "scripts": {
+    "build": "node scripts/build.mjs",
+    "dev": "npm run build && wrangler pages dev public --compatibility-date=2024-11-01",
+    "preview": "npm run build && wrangler pages dev public",
+    "deploy": "npm run build && wrangler pages deploy public --project-name=ground-zero",
+    "d1:seed:local": "wrangler d1 execute ground-zero --local --file=migrations/001_seed.sql",
+    "d1:seed:remote": "wrangler d1 execute ground-zero --remote --file=migrations/001_seed.sql"
+  },
+  "devDependencies": {
+    "wrangler": "^4.0.0"
+  },
+  "license": "MIT",
+  "private": true
+}

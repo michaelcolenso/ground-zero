@@ -1,0 +1,14 @@
+name = "ground-zero"
+compatibility_date = "2024-11-01"
+pages_build_output_dir = "public"
+
+# The site is fully static + Pages Functions that bundle the dataset, so no
+# database binding is required to run or deploy. The D1 path is optional:
+# create the database, uncomment the binding, and seed it with
+#   npm run d1:seed:remote
+# to back the /api/* functions with D1 instead of the bundled snapshot.
+#
+# [[d1_databases]]
+# binding = "DB"
+# database_name = "ground-zero"
+# database_id = "<your-d1-database-id>"
